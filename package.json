@@ -10,7 +10,7 @@
     "lint": "next lint",
     "predeploy": "npm run build && npm run export",
     "deploy": "gh-pages -d out"
-  },
+},
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.3.1",
