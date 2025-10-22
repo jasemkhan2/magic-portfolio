@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import mdx from "@next/mdx";
 
 const withMDX = mdx({
@@ -8,7 +7,9 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Keeping the static export line for GitHub Pages deployment
+  output: 'export', 
+  
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
@@ -27,23 +28,3 @@ const nextConfig = {
 };
 
 export default withMDX(nextConfig);
-=======
-import mdx from "@next/mdx";
-
-const withMDX = mdx({
-  extension: /\.mdx?$/,
-  options: {},
-});
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-mdx-remote"],
-  sassOptions: {
-    compiler: "modern",
-    silenceDeprecations: ["legacy-js-api"],
-  },
-};
-
-export default withMDX(nextConfig);
->>>>>>> 6e093c82ca0ba41cdf77be171e75324cef2269cd
