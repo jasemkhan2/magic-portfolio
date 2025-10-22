@@ -101,11 +101,21 @@ export interface Home extends BasePageConfig {
   subline: React.ReactNode;
 }
 
+import React from 'react'; 
+
+// Helper interface for a single certification item
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  timeframe: string; // The month/year you completed it
+  description?: React.ReactNode; // CHANGED: Replaced 'link' with rich 'description'
+}
+
 /**
  * About page configuration.
  * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
  */
-export interface About extends BasePageConfig {
+export interface About extends BasePageConfig { // Assuming BasePageConfig is defined elsewhere
   /** Table of contents configuration */
   tableOfContent: {
     /** Whether to display the table of contents */
@@ -174,9 +184,22 @@ export interface About extends BasePageConfig {
       /** Institution name */
       name: string;
       /** Description of studies */
+      timeframe: string;
       description: React.ReactNode;
     }>;
   };
+  
+  /** Certifications section */
+  certifications?: {
+    /** Whether to display the certifications section */
+    display: boolean;
+    /** Title for the certifications section */
+    title: string;
+    /** List of certifications earned */
+    items: CertificationItem[];
+  };
+  // =========================================================
+
   /** Technical skills section */
   technical: {
     /** Whether to display technical skills section */
@@ -210,29 +233,7 @@ export interface About extends BasePageConfig {
 }
 
 /**
- * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
- */
-export interface Blog extends BasePageConfig {}
-
-/**
  * Work/projects page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
 export interface Work extends BasePageConfig {}
-
-/**
- * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
- */
-export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
-  images: Array<{
-    /** Image source path */
-    src: string;
-    /** Image alt text */
-    alt: string;
-    /** Image orientation (horizontal/vertical) */
-    orientation: string;
-  }>;
-}

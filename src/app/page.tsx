@@ -14,7 +14,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+// import { Posts } from "@/components/blog/Posts"; // REMOVED: This was likely implicitly imported or causing the conflict
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -103,7 +103,9 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {routes["/blog"] && (
+      
+      {/* Blog section removed entirely */}
+      {/* {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
             <Line maxWidth={48} />
@@ -115,14 +117,15 @@ export default function Home() {
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
+              <Posts range={[1, 2]} columns="2" /> // REMOVED: This line caused the error
             </Row>
           </Row>
           <Row fillWidth paddingLeft="64" horizontal="end">
             <Line maxWidth={48} />
           </Row>
         </Column>
-      )}
+      )} */}
+      
       <Projects range={[2]} />
       <Mailchimp />
     </Column>
