@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 @use "./breakpoints.scss" as breakpoints;
 
 @media (max-width: breakpoints.$s) {
     .mobile {
         text-align: center;
-=======
-@media (--s) {
-    .mobile {
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
->>>>>>> 6e093c82ca0ba41cdf77be171e75324cef2269cd
     }
 }
